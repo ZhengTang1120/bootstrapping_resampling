@@ -1,5 +1,6 @@
 import random
-from scorer import 
+import scorer
+import json
 
 def bootstrapping(inputs, N, n):
 
@@ -28,3 +29,10 @@ def statistical_significance_eval(inputs, baselines, golds, N):
             count += 1.0
 
     return count/N
+
+origin = json.load(open('/Users/zheng/Documents/GitHub/syn-GCN/tacred/data/json/test.json'))
+golds = [item["relation"] for item in origin]
+inputs = [line.strip() for line in open("output_132_test_best_model_6.txt")]
+baselines = [line.strip() for line in open("output_132_test_best_model_10.txt")]
+
+print (statistical_significance_eval(inputs, baselines, golds, 10000))

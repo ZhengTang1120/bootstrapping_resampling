@@ -90,9 +90,9 @@ def score(key, prediction, verbose=False):
     f1_micro = 0.0
     if prec_micro + recall_micro > 0.0:
         f1_micro = 2.0 * prec_micro * recall_micro / (prec_micro + recall_micro)
-    print( "Precision (micro): {:.3%}".format(prec_micro) )
-    print( "   Recall (micro): {:.3%}".format(recall_micro) )
-    print( "       F1 (micro): {:.3%}".format(f1_micro) )
+    # print( "Precision (micro): {:.3%}".format(prec_micro) )
+    # print( "   Recall (micro): {:.3%}".format(recall_micro) )
+    # print( "       F1 (micro): {:.3%}".format(f1_micro) )
     return prec_micro, recall_micro, f1_micro
 
 if __name__ == "__main__":
